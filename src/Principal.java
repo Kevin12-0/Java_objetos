@@ -1,6 +1,9 @@
 package src;
 
 public class Principal {
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
         /*
          * Pelicula => tipo de dato
@@ -11,15 +14,25 @@ public class Principal {
         miPelicula.nombre = "Encanto";
         miPelicula.fechaDeLanzamiento = 2021;
         miPelicula.duracionEnMinutos = 120;
-        System.out.println("Mi pelicula es: " + miPelicula.nombre + " y su fecha de lanzamiento es: "
-                + miPelicula.fechaDeLanzamiento);
+        /* llamando a un metodo */
+        miPelicula.muestraFichaTecnica();
+        /* llamando a metodo de evaluar pelicula */
+        miPelicula.evaluacion(10);
+        miPelicula.evaluacion(9);
+        miPelicula.evaluacion(8);
+        miPelicula.evaluacion(8);
+        /* llamando a metodo que suma las evaluaciones */
+        System.out.println(miPelicula.sumaDeEvaluaciones);
+        /* saber el total de evaluaciones */
+        System.out.println(miPelicula.totalEvaluaciones);
+        /* llamando a metodo pára calcualr la media */
+        System.out.println(miPelicula.calcularMedia());
 
         Pelicula otraPelicula = new Pelicula();
         otraPelicula.duracionEnMinutos = 218;
         otraPelicula.fechaDeLanzamiento = 1999;
         otraPelicula.nombre = "Terminator";
-        System.out.println("Mi pelicula es: " + otraPelicula.nombre + " y su fecha de lanzamiento es: "
-                + otraPelicula.fechaDeLanzamiento);
-
+        /* llamando metodo muestraFichaTecnica */
+        otraPelicula.muestraFichaTecnica();
     }
 }
