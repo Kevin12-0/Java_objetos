@@ -21,10 +21,6 @@ public class Principal {
         miPelicula.evaluacion(9);
         miPelicula.evaluacion(8);
         miPelicula.evaluacion(8);
-        /* llamando a metodo que suma las evaluaciones */
-        System.out.println(miPelicula.sumaDeEvaluaciones);
-        /* saber el total de evaluaciones */
-        System.out.println(miPelicula.totalEvaluaciones);
         /* llamando a metodo pára calcualr la media */
         System.out.println(miPelicula.calcularMedia());
 

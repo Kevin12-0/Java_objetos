@@ -6,8 +6,16 @@ public class Pelicula {
     int fechaDeLanzamiento;
     int duracionEnMinutos;
     boolean incluidoEnElPlan;
-    double sumaDeEvaluaciones;
-    int totalEvaluaciones;
+    /* modificador de las evaluaciones 
+     * private
+     * public
+     */
+    private double sumaDeEvaluaciones;
+    private int totalEvaluaciones;
+    /* obtener datos de una variable privada */
+    int getTotalEvaluaciones(){
+        return totalEvaluaciones;
+    }
 
     /*
      * creando metodo que imprimie la informacion de la pelicula
@@ -20,11 +28,14 @@ public class Pelicula {
 
     /* creando metodo que reciba un parametro */
     void evaluacion(double nota) {
+        /* la suma de las evaluaciones se asignan a nota */
         sumaDeEvaluaciones += nota;
+        /* contador de total de evaluaciones */
         totalEvaluaciones++;
     }
 
     double calcularMedia() {
+        /* calcular la media de las evalaciones */
         return sumaDeEvaluaciones / totalEvaluaciones;
     }
 }
