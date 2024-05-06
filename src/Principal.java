@@ -1,6 +1,7 @@
 package src;
 
-import src.com.alura.java.screenmatch.Pelicula;;
+import src.com.alura.java.screenmatch.Pelicula;
+import src.com.alura.java.screenmatch.Serie;
 
 public class Principal {
     /**
@@ -38,5 +39,16 @@ public class Principal {
         otraPelicula.setName("Terminator");
         /* llamando metodo muestraFichaTecnica */
         otraPelicula.muestraFichaTecnica();
+
+        /* llamando a una clase serie */
+
+        Serie kobraKai = new Serie();
+
+        /* llamando a sus atributos para asignarle un valor */
+        kobraKai.setName("Kobra Kai");
+        kobraKai.setData(2017);
+        kobraKai.setTemporades(5);
+        kobraKai.setMinutesForEpisodi(50);
+        kobraKai.setEpisodeForSeason(14);
     }
 }
