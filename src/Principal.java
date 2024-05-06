@@ -50,6 +50,6 @@ public class Principal {
         kobraKai.setTemporades(5);
         kobraKai.setMinutesForEpisodi(50);
         kobraKai.setEpisodeForSeason(14);
-        System.out.println(kobraKai.getMinutesForEpisodi());
+        System.out.println(kobraKai.getDurationInMinutes());
     }
 }
