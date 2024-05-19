@@ -1,7 +1,10 @@
 package src;
 
-import src.com.alura.java.screenmatch.Pelicula;
-import src.com.alura.java.screenmatch.Serie;
+import src.com.alura.screenmatch.calculo.CalculatorOfTime;
+import src.com.alura.screenmatch.calculo.FilterRecomendation;
+import src.com.alura.screenmatch.modelos.Episodio;
+import src.com.alura.screenmatch.modelos.Pelicula;
+import src.com.alura.screenmatch.modelos.Serie;
 
 public class Principal {
     /**
@@ -50,6 +53,22 @@ public class Principal {
         kobraKai.setTemporades(5);
         kobraKai.setMinutesForEpisodi(50);
         kobraKai.setEpisodeForSeason(14);
+        kobraKai.muestraFichaTecnica();
         System.out.println(kobraKai.getDurationInMinutes());
+
+        CalculatorOfTime calculator = new CalculatorOfTime();
+        calculator.incluides(miPelicula);
+        calculator.incluides(kobraKai);
+        System.out.println("tiempo total: "+ calculator.getTotalTime());
+
+        FilterRecomendation filterRecomendation = new FilterRecomendation();
+        filterRecomendation.filter(miPelicula);
+
+        Episodio episodio = new Episodio();
+        episodio.setName("Kobra Kai");
+        episodio.setNumber(1);
+        episodio.setSerie(kobraKai);
+        episodio.setTotalViews(50);
+        filterRecomendation.filter(episodio);
     }
 }

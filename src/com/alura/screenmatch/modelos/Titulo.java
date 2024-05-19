@@ -1,4 +1,4 @@
-package src.com.alura.java.screenmatch;
+package src.com.alura.screenmatch.modelos;
 
 public class Titulo {
     /* atributos de una clase */
@@ -55,8 +55,9 @@ public class Titulo {
      */
     public void muestraFichaTecnica() {
         System.out.println("El nombre de la pelicula es: " + nombre + " y su fecha de lanzamiento es: "
-                + fechaDeLanzamiento);
+                + fechaDeLanzamiento + " dura en minutos: " );
     }
+
 
     /* creando metodo que reciba un parametro */
     public void evaluacion(double nota) {

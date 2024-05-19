@@ -1,4 +1,4 @@
-package src.com.alura.java.screenmatch;
+package src;
 
 /* extends sirve para que una clase herede de una clase principal
  * ejemplo:

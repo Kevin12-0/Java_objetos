@@ -1,4 +1,4 @@
-package src.com.alura.java.screenmatch;
+package src;
 
 public class Serie extends Titulo {
     int temporades;
