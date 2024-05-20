@@ -1,2 +1,5 @@
-package src.com.alura.screenmatch.calculo;public class Classification {
+package src.com.alura.screenmatch.calculo;
+
+public interface Classification {
+    int getClassification();
 }

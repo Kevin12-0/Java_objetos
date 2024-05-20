@@ -1,34 +1,30 @@
 package src.com.alura.screenmatch.modelos;
 
 public class Titulo {
-    /* atributos de una clase */
     private String nombre;
     private int fechaDeLanzamiento;
-
     private int duracionEnMinutos;
     private boolean incluidoEnElPlan;
-    /*
-     * modificador de las evaluaciones
-     * private
-     * public
-     */
-    private double sumaDeEvaluaciones;
-    private int totalEvaluaciones;
+    private double sumaDeLasEvaluaciones;
+    private int totalDelasEvaluaciones;
 
     public String getNombre() {
         return nombre;
     }
 
-    public int fechaDeLanzamiento() {
+    public int getFechaDeLanzamiento() {
         return fechaDeLanzamiento;
     }
 
-    public int duracionEnMinutos() {
+    public int getDurationInMinutes() {
         return duracionEnMinutos;
     }
 
+    public boolean isIncluidoEnElPlan() {
+        return incluidoEnElPlan;
+    }
+
     public void setName(String nombre) {
-        /* referirir la varibale a a un atributo */
         this.nombre = nombre;
     }
 
@@ -40,35 +36,26 @@ public class Titulo {
         this.duracionEnMinutos = duracionEnMinutos;
     }
 
-    public void setInclude(boolean incluidoEnElPlan) {
+    public void setIncluidoEnElPlan(boolean incluidoEnElPlan) {
         this.incluidoEnElPlan = incluidoEnElPlan;
     }
 
-    /* obtener datos de una variable privada */
     public int getTotalEvaluaciones() {
-        return totalEvaluaciones;
+        return totalDelasEvaluaciones;
     }
 
-    /*
-     * creando metodo que imprimie la informacion de la pelicula
-     *
-     */
     public void muestraFichaTecnica() {
-        System.out.println("El nombre de la pelicula es: " + nombre + " y su fecha de lanzamiento es: "
-                + fechaDeLanzamiento + " dura en minutos: " );
+        System.out.println("El nombre de la película es: " + nombre);
+        System.out.println("Su fecha de lanzamiento es: " + fechaDeLanzamiento);
+        System.out.println("Duración en minutos: " + getDurationInMinutes());
     }
 
-
-    /* creando metodo que reciba un parametro */
     public void evaluacion(double nota) {
-        /* la suma de las evaluaciones se asignan a nota */
-        sumaDeEvaluaciones += nota;
-        /* contador de total de evaluaciones */
-        totalEvaluaciones++;
+        sumaDeLasEvaluaciones += nota;
+        totalDelasEvaluaciones++;
     }
 
     public double calcularMedia() {
-        /* calcular la media de las evalaciones */
-        return sumaDeEvaluaciones / totalEvaluaciones;
+        return sumaDeLasEvaluaciones / totalDelasEvaluaciones;
     }
 }
