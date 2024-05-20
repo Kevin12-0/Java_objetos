@@ -5,6 +5,15 @@ public class Songs extends Audio {
     private String band;
     private String genre;
 
+    @Override
+    public int getClassification(){
+        if (getTotalReproductions() > 2000){
+            return 8;
+        } else {
+            return 4;
+        }
+    }
+
     public String getAlbum() {
         return album;
     }
