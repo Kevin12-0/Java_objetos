@@ -1,5 +1,7 @@
 package src;
 
+import java.util.ArrayList;
+
 import src.com.alura.screenmatch.calculo.CalculatorOfTime;
 import src.com.alura.screenmatch.calculo.FilterRecomendation;
 import src.com.alura.screenmatch.modelos.Episodio;
@@ -59,7 +61,7 @@ public class Principal {
         CalculatorOfTime calculator = new CalculatorOfTime();
         calculator.incluides(miPelicula);
         calculator.incluides(kobraKai);
-        System.out.println("tiempo total: "+ calculator.getTotalTime());
+        System.out.println("tiempo total: " + calculator.getTotalTime());
 
         FilterRecomendation filterRecomendation = new FilterRecomendation();
         filterRecomendation.filter(miPelicula);
@@ -70,5 +72,22 @@ public class Principal {
         episodio.setSerie(kobraKai);
         episodio.setTotalViews(50);
         filterRecomendation.filter(episodio);
+
+        /* se puede cambiar Pelicula por var, al principio de declarar la variable 
+         * no significa que se puede cambiar el tipo de dato
+        */
+
+        var peliculaDeKevin = new Pelicula();
+        peliculaDeKevin.setName("Señor de los anillos");
+        peliculaDeKevin.setDuration(180);
+        peliculaDeKevin.setData(2001);
+
+        /* creando un array list */
+        ArrayList<Pelicula> listaMovies = new ArrayList<>();
+        /* agregar items al array list */
+        listaMovies.add(peliculaDeKevin);
+        listaMovies.add(miPelicula);
+        listaMovies.add(otraPelicula);
+
     }
 }
