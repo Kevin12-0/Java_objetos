@@ -6,7 +6,7 @@ import src.com.alura.screenmatch.calculo.Classification;
  * ejemplo:
  *
  * Pelicula hereda atributos de Titulo(clase Principal)
- */                                 // Implementaar una interfas
+ */ // Implementaar una interfas
 public class Pelicula extends Titulo implements Classification {
     private String director;
 
@@ -23,5 +23,11 @@ public class Pelicula extends Titulo implements Classification {
     public int getClassification() {
         // casteo
         return (int) calcularMedia() / 2;
+    }
+
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return "Movie: " + this.getNombre() + "(" + getFechaDeLanzamiento() + ")";
     }
 }

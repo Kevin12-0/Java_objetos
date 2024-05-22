@@ -89,13 +89,14 @@ public class Principal {
         listaMovies.add(peliculaDeKevin);
         listaMovies.add(miPelicula);
         listaMovies.add(otraPelicula);
-
+        /* saber el tamño de la lista */
         System.out.println("Tamaño de la lista: " + listaMovies.size());
         /* obtenes un elemento en particular */
         System.out.println("La primera pelicula es: " + listaMovies.get(0).getNombre());
         /* imprime la lista pero me retorna el nombre del espacio en memoria */
         System.out.println(listaMovies);
         /* retorna el nombre de la clase y un caracter exadecimal */
-        System.out.println(listaMovies.get(0).toString());
+        /* System.out.println(listaMovies.get(0).toString()); */
+        System.out.println("toSting de la pelicula"+listaMovies.get(0).toString());
     }
 }

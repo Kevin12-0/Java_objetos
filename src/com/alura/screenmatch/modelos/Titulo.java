@@ -1,5 +1,7 @@
 package src.com.alura.screenmatch.modelos;
-
+/* titutlo no extiende de object
+ * por que java lo hace por debajo
+ */
 public class Titulo {
     private String nombre;
     private int fechaDeLanzamiento;
