@@ -21,6 +21,7 @@ public class CalculatorOfTime {
 //    }
 
     public void incluides(Titulo titulo) {
+        System.out.println("Agregado de minutos");
         this.totalTime += titulo.getDurationInMinutes();
     }
 

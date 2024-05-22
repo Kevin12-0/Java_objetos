@@ -30,4 +30,9 @@ public class Pelicula extends Titulo implements Classification {
         // TODO Auto-generated method stub
         return "Movie: " + this.getNombre() + "(" + getFechaDeLanzamiento() + ")";
     }
+
+    public Pelicula(String nombre){
+        this.setName(nombre);
+    }
+
 }

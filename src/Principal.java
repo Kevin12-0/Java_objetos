@@ -17,9 +17,8 @@ public class Principal {
          * Pelicula => llamando a la clase
          * new Pelicula => espacio para el objeto
          */
-        Pelicula miPelicula = new Pelicula();
+        Pelicula miPelicula = new Pelicula("Encanto");
         /* asignar valores a atributos de la clase */
-        miPelicula.setName("Encanto");
         miPelicula.setData(2021);
         miPelicula.setDuration(115);
         /* llamando a un metodo */
@@ -37,11 +36,9 @@ public class Principal {
         /* llamando a metodo pára calcualr la media */
         System.out.println(miPelicula.calcularMedia());
 
-        Pelicula otraPelicula = new Pelicula();
+        Pelicula otraPelicula = new Pelicula("Terminator");
         otraPelicula.setData(1999);
         otraPelicula.setDuration(180);
-        ;
-        otraPelicula.setName("Terminator");
         /* llamando metodo muestraFichaTecnica */
         otraPelicula.muestraFichaTecnica();
 
@@ -78,8 +75,7 @@ public class Principal {
          * no significa que se puede cambiar el tipo de dato
          */
 
-        var peliculaDeKevin = new Pelicula();
-        peliculaDeKevin.setName("Señor de los anillos");
+        var peliculaDeKevin = new Pelicula("Señor de los anillos");
         peliculaDeKevin.setDuration(180);
         peliculaDeKevin.setData(2001);
 
@@ -97,6 +93,8 @@ public class Principal {
         System.out.println(listaMovies);
         /* retorna el nombre de la clase y un caracter exadecimal */
         /* System.out.println(listaMovies.get(0).toString()); */
-        System.out.println("toSting de la pelicula"+listaMovies.get(0).toString());
+        System.out.println("toSting de la pelicula: "+listaMovies.get(0).toString());
+
+        
     }
 }
