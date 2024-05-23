@@ -1,4 +1,5 @@
 package src.com.alura.screenmatch.modelos;
+
 /* titutlo no extiende de object
  * por que java lo hace por debajo
  */
@@ -9,6 +10,11 @@ public class Titulo {
     private boolean incluidoEnElPlan;
     private double sumaDeLasEvaluaciones;
     private int totalDelasEvaluaciones;
+
+    public Titulo(String nombre, int fechaDeLanzamiento) {
+        this.nombre = nombre;
+        this.fechaDeLanzamiento = fechaDeLanzamiento;
+    }
 
     public String getNombre() {
         return nombre;

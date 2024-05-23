@@ -32,4 +32,8 @@ public class Serie extends Titulo {
     public void setTemporades(int temporades) {
         this.temporades = temporades;
     }
+
+    public Serie(String nombre, int fechaDeLanzamiento) {
+        super(nombre, fechaDeLanzamiento);
+    }
 }

@@ -1,4 +1,4 @@
-package src;
+package src.com.alura.screenmatch.Principal;
 
 import java.util.ArrayList;
 
@@ -17,9 +17,8 @@ public class Principal {
          * Pelicula => llamando a la clase
          * new Pelicula => espacio para el objeto
          */
-        Pelicula miPelicula = new Pelicula("Encanto");
+        Pelicula miPelicula = new Pelicula("Encanto",2021);
         /* asignar valores a atributos de la clase */
-        miPelicula.setData(2021);
         miPelicula.setDuration(115);
         /* llamando a un metodo */
         miPelicula.muestraFichaTecnica();
@@ -36,19 +35,16 @@ public class Principal {
         /* llamando a metodo pára calcualr la media */
         System.out.println(miPelicula.calcularMedia());
 
-        Pelicula otraPelicula = new Pelicula("Terminator");
-        otraPelicula.setData(1999);
+        Pelicula otraPelicula = new Pelicula("Terminator",1998);
         otraPelicula.setDuration(180);
         /* llamando metodo muestraFichaTecnica */
         otraPelicula.muestraFichaTecnica();
 
         /* llamando a una clase serie */
 
-        Serie kobraKai = new Serie();
+        Serie kobraKai = new Serie("Kobra Kai",2017);
 
         /* llamando a sus atributos para asignarle un valor */
-        kobraKai.setName("Kobra Kai");
-        kobraKai.setData(2017);
         kobraKai.setTemporades(5);
         kobraKai.setMinutesForEpisodi(50);
         kobraKai.setEpisodeForSeason(14);
@@ -75,9 +71,8 @@ public class Principal {
          * no significa que se puede cambiar el tipo de dato
          */
 
-        var peliculaDeKevin = new Pelicula("Señor de los anillos");
+        var peliculaDeKevin = new Pelicula("Señor de los anillos",2021);
         peliculaDeKevin.setDuration(180);
-        peliculaDeKevin.setData(2001);
 
         /* creando un array list */
         ArrayList<Pelicula> listaMovies = new ArrayList<>();

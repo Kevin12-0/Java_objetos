@@ -31,8 +31,8 @@ public class Pelicula extends Titulo implements Classification {
         return "Movie: " + this.getNombre() + "(" + getFechaDeLanzamiento() + ")";
     }
 
-    public Pelicula(String nombre){
-        this.setName(nombre);
+    public Pelicula(String nombre, int fechaDeLanzamiento){
+        super(nombre,fechaDeLanzamiento);
     }
 
 }
