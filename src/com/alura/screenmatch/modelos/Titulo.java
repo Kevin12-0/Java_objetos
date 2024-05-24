@@ -3,7 +3,7 @@ package src.com.alura.screenmatch.modelos;
 /* titutlo no extiende de object
  * por que java lo hace por debajo
  */
-public class Titulo {
+public class Titulo implements Comparable<Titulo> {
     private String nombre;
     private int fechaDeLanzamiento;
     private int duracionEnMinutos;
@@ -65,5 +65,10 @@ public class Titulo {
 
     public double calcularMedia() {
         return sumaDeLasEvaluaciones / totalDelasEvaluaciones;
+    }
+
+    @Override
+    public int compareTo(Titulo otherTitule) {
+        return this.getNombre().compareTo(otherTitule.getNombre());
     }
 }
