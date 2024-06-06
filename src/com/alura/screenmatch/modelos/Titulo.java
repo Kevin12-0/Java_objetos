@@ -1,10 +1,16 @@
 package src.com.alura.screenmatch.modelos;
 
+import com.google.gson.annotations.SerializedName;
+
 /* titutlo no extiende de object
  * por que java lo hace por debajo
  */
 public class Titulo implements Comparable<Titulo> {
+    /* obtener de un Json el nombre */
+    @SerializedName("Title")
     private String nombre;
+    /* obtener de un Json el año */
+    @SerializedName("Year")
     private int fechaDeLanzamiento;
     private int duracionEnMinutos;
     private boolean incluidoEnElPlan;
@@ -14,6 +20,13 @@ public class Titulo implements Comparable<Titulo> {
     public Titulo(String nombre, int fechaDeLanzamiento) {
         this.nombre = nombre;
         this.fechaDeLanzamiento = fechaDeLanzamiento;
+    }
+
+    public Titulo(TituleOmdb miOtherTitle) {
+        this.nombre = miOtherTitle.Title();
+        /* convertir texto a entero */
+        this.fechaDeLanzamiento = Integer.valueOf(miOtherTitle.Year());
+        this.duracionEnMinutos = Integer.valueOf(miOtherTitle.Runtime().substring(0, 2));
     }
 
     public String getNombre() {
@@ -70,5 +83,12 @@ public class Titulo implements Comparable<Titulo> {
     @Override
     public int compareTo(Titulo otherTitule) {
         return this.getNombre().compareTo(otherTitule.getNombre());
+    }
+
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return "Name: " + nombre + " Year:" + fechaDeLanzamiento + ", duracion: " + duracionEnMinutos;
+
     }
 }
