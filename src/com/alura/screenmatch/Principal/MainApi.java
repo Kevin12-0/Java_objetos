@@ -1,10 +1,13 @@
 package src.com.alura.screenmatch.Principal;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import com.google.gson.FieldNamingPolicy;
@@ -17,67 +20,73 @@ import src.com.alura.screenmatch.modelos.Titulo;
 
 public class MainApi {
     public static void main(String[] args) throws IOException, InterruptedException {
-        /* definimos el scanner */
+        // Definir el Scanner
         Scanner reed = new Scanner(System.in);
-        /* pregunta el nombre de la pelicula */
-        System.out.println("Escriba el nombre de una pelicula: ");
-        /* lee tu respuesta y la almacena */
-        var search = reed.nextLine();
-        /*
-         * se concatena a la variable url
-         * replace(" ","+") reemplaza el espcio por un signo de +
-         *
-         */
-        String url = "http://www.omdbapi.com/?t=" + search.replace(" ", "+") + "&apikey=14991e95";
-        /* conexion con la api */
-        try {
-            HttpClient client = HttpClient.newHttpClient();
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(url)).build();
-            /* http request */
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            /* guardar el Json */
-            String json = response.body();
-            /* obtener el json */
-            System.out.println(json);
 
-            /* variable para usar Gson */
-            Gson gson = new Gson();
-            /* convertirlo a clase */
+        // Crear instancia de Gson con políticas de nombrado
+        Gson gsonData = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).setPrettyPrinting()
+                .create();
 
-            /* Titulo mititulo = gson.fromJson(json, Titulo.class); */
-            TituleOmdb mitituloOmdb = gson.fromJson(json, TituleOmdb.class);
-            /* impimir el los datos requeridos */
-            System.out.println(mitituloOmdb);
-            /*
-             * este código crea un objeto Gson que durante la serialización y
-             * deserialización de objetos JSON aplicará la política UPPER_CAMEL_CASE para
-             * los nombres de los campos. Esto puede ser útil si los nombres de los campos
-             * en tu código Java no coinciden con las convenciones de nombrado estándar de
-             * JSON (lower camel case).
-             */
-            Gson gsonData = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
-            /* generar una estancia de un objeto */
-            TituleOmdb miOtherTitle = gsonData.fromJson(json, TituleOmdb.class);
-            /* imprimir el resultado en consola */
+        // Lista para almacenar los títulos
+        List<Titulo> titulos = new ArrayList<>();
 
-            System.out.println(miOtherTitle);
-            /* manejo de errores */
+        // Realizar varias consultas
+        while (true) {
+            // Preguntar por el nombre de la película
+            System.out.println("Escriba el nombre de una pelicula: ");
+            // Leer la respuesta y almacenarla
+            var search = reed.nextLine();
 
-            Titulo mititulo = new Titulo(miOtherTitle);
-            System.out.println("Informacion del titutlo: " + mititulo);
-            /* error de numero */
-        } catch (NumberFormatException e) {
-            System.out.println("Error ---> " + e.getMessage());
-            /* erro de argumento */
-        } catch (IllegalArgumentException e) {
-            System.out.println("error url -->" + e);
-            /* error general */
-        } catch (ErrorEnCobvecionDuracion e) {
-            System.out.println("Error Inesperado ----> " + e.getMessage());
+            // Condición para salir del bucle
+            if (search.equalsIgnoreCase("salir")) {
+                break;
+            }
+
+            // Concatenar a la variable URL y reemplazar espacios por '+'
+            String url = "http://www.omdbapi.com/?t=" + search.replace(" ", "+") + "&apikey=14991e95";
+
+            // Conexión con la API
+            try {
+                HttpClient client = HttpClient.newHttpClient();
+                HttpRequest request = HttpRequest.newBuilder()
+                        .uri(URI.create(url)).build();
+                // HTTP request
+                HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+                // Guardar el JSON
+                String json = response.body();
+                // Imprimir el JSON
+                System.out.println(json);
+
+                // Convertir el JSON a la clase TituleOmdb
+                TituleOmdb miTituloOmdb = gsonData.fromJson(json, TituleOmdb.class);
+                // Imprimir los datos requeridos
+                System.out.println(miTituloOmdb);
+
+                // Generar una instancia de Titulo usando TituleOmdb
+                Titulo miTitulo = new Titulo(miTituloOmdb);
+                System.out.println("Informacion del titulo: " + miTitulo);
+
+                // Añadir el título a la lista
+                titulos.add(miTitulo);
+
+            } catch (NumberFormatException e) {
+                System.out.println("Error ---> " + e.getMessage());
+            } catch (IllegalArgumentException e) {
+                System.out.println("Error URL -->" + e);
+            } catch (ErrorEnCobvecionDuracion e) {
+                System.out.println("Error Inesperado ----> " + e.getMessage());
+            }
         }
+
+        // Cerrar el Scanner
+        reed.close();
+
+        // Escribir la lista de títulos en un archivo
+        FileWriter logger = new FileWriter("peliculasLogger.txt");
+        logger.write(gsonData.toJson(titulos));
+        logger.close();
+
         System.out.println("Finish");
-
     }
-
 }

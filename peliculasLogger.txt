@@ -1,0 +1,26 @@
+[
+  {
+    "Nombre": "Por mis pistolas",
+    "FechaDeLanzamiento": 1968,
+    "DuracionEnMinutos": 123,
+    "IncluidoEnElPlan": false,
+    "SumaDeLasEvaluaciones": 0.0,
+    "TotalDelasEvaluaciones": 0
+  },
+  {
+    "Nombre": "El patrullero 777",
+    "FechaDeLanzamiento": 1978,
+    "DuracionEnMinutos": 120,
+    "IncluidoEnElPlan": false,
+    "SumaDeLasEvaluaciones": 0.0,
+    "TotalDelasEvaluaciones": 0
+  },
+  {
+    "Nombre": "El coyote emplumado",
+    "FechaDeLanzamiento": 1983,
+    "DuracionEnMinutos": 98,
+    "IncluidoEnElPlan": false,
+    "SumaDeLasEvaluaciones": 0.0,
+    "TotalDelasEvaluaciones": 0
+  }
+]
