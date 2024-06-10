@@ -23,7 +23,7 @@ public class MainList {
         Serie kobraKai = new Serie("Kobra Kai", 2017);
         /*
          * lista de peliculas & series
-         * 
+         *
          * para resolver y que no aparezcan en modo antiguo, puedes hacerlo con object
          */
         ArrayList<Titulo> list = new ArrayList<>();
@@ -59,7 +59,7 @@ public class MainList {
         System.out.println("Lista de titulos oprdenados " + list);
 
         list.sort(Comparator.comparing(Titulo::getFechaDeLanzamiento));
-        System.out.println("lista ordenada por fecha: "+list);
+        System.out.println("lista ordenada por fecha: " + list);
     }
 
 }

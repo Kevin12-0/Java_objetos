@@ -26,7 +26,10 @@ public class Titulo implements Comparable<Titulo> {
         this.nombre = miOtherTitle.Title();
         /* convertir texto a entero */
         this.fechaDeLanzamiento = Integer.valueOf(miOtherTitle.Year());
-        this.duracionEnMinutos = Integer.valueOf(miOtherTitle.Runtime().substring(0, 2));
+        if (miOtherTitle.Runtime().contains("N/A")) {
+            throw new ErrorEnCobvecionDuracion("No se puede convertir la duracion Contiene un N/A");
+        }
+        this.duracionEnMinutos = Integer.valueOf(miOtherTitle.Runtime().substring(0, 3).replace(" ", ""));
     }
 
     public String getNombre() {

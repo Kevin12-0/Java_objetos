@@ -17,7 +17,7 @@ public class Principal {
          * Pelicula => llamando a la clase
          * new Pelicula => espacio para el objeto
          */
-        Pelicula miPelicula = new Pelicula("Encanto",2021);
+        Pelicula miPelicula = new Pelicula("Encanto", 2021);
         /* asignar valores a atributos de la clase */
         miPelicula.setDuration(115);
         /* llamando a un metodo */
@@ -35,14 +35,14 @@ public class Principal {
         /* llamando a metodo pára calcualr la media */
         System.out.println(miPelicula.calcularMedia());
 
-        Pelicula otraPelicula = new Pelicula("Terminator",1998);
+        Pelicula otraPelicula = new Pelicula("Terminator", 1998);
         otraPelicula.setDuration(180);
         /* llamando metodo muestraFichaTecnica */
         otraPelicula.muestraFichaTecnica();
 
         /* llamando a una clase serie */
 
-        Serie kobraKai = new Serie("Kobra Kai",2017);
+        Serie kobraKai = new Serie("Kobra Kai", 2017);
 
         /* llamando a sus atributos para asignarle un valor */
         kobraKai.setTemporades(5);
@@ -71,7 +71,7 @@ public class Principal {
          * no significa que se puede cambiar el tipo de dato
          */
 
-        var peliculaDeKevin = new Pelicula("Señor de los anillos",2021);
+        var peliculaDeKevin = new Pelicula("Señor de los anillos", 2021);
         peliculaDeKevin.setDuration(180);
 
         /* creando un array list */
@@ -88,8 +88,8 @@ public class Principal {
         System.out.println(listaMovies);
         /* retorna el nombre de la clase y un caracter exadecimal */
         /* System.out.println(listaMovies.get(0).toString()); */
-        System.out.println("toSting de la pelicula: "+listaMovies.get(0).toString());
+        System.out.println("toSting de la pelicula: " + listaMovies.get(0).toString());
 
-        
+
     }
 }

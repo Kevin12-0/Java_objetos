@@ -22,8 +22,12 @@ public class MainApi {
         System.out.println("Escriba el nombre de una pelicula: ");
         /* lee tu respuesta y la almacena */
         var search = reed.nextLine();
-        /* se concatena a la variable url */
-        String url = "http://www.omdbapi.com/?t=" + search + "&apikey=14991e95";
+        /*
+         * se concatena a la variable url
+         * replace(" ","+") reemplaza el espcio por un signo de +
+         *
+         */
+        String url = "http://www.omdbapi.com/?t=" + search.replace(" ", "+") + "&apikey=14991e95";
         /* conexion con la api */
         try {
             HttpClient client = HttpClient.newHttpClient();
