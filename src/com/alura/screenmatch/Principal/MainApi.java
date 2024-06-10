@@ -11,6 +11,7 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import src.com.alura.screenmatch.modelos.ErrorEnCobvecionDuracion;
 import src.com.alura.screenmatch.modelos.TituleOmdb;
 import src.com.alura.screenmatch.modelos.Titulo;
 
@@ -72,8 +73,8 @@ public class MainApi {
         } catch (IllegalArgumentException e) {
             System.out.println("error url -->" + e);
             /* error general */
-        } catch (Exception e) {
-            System.out.println("Error Inesperado ---->" + e);
+        } catch (ErrorEnCobvecionDuracion e) {
+            System.out.println("Error Inesperado ----> " + e.getMessage());
         }
         System.out.println("Finish");
 

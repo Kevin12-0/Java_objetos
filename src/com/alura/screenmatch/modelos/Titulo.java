@@ -26,6 +26,11 @@ public class Titulo implements Comparable<Titulo> {
         this.nombre = miOtherTitle.Title();
         /* convertir texto a entero */
         this.fechaDeLanzamiento = Integer.valueOf(miOtherTitle.Year());
+        /*
+         * manejo de errores
+         * 
+         * creando un numevo metodo de manejo de errores
+         */
         if (miOtherTitle.Runtime().contains("N/A")) {
             throw new ErrorEnCobvecionDuracion("No se puede convertir la duracion Contiene un N/A");
         }
